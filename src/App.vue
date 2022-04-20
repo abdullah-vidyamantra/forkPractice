@@ -3,15 +3,34 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
 
+import PosT from './components/PosT.vue'
+import PostDetails from './components/PostDetails.vue'
+import { ref } from 'vue'
+
+let showPost = ref(true);
+const onCreatePost =() =>{
+showPost.value = false;
+setTimeout(() => {
+  showPost.value = true;
+}, 50);
+}
+
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <button class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-  Save changes
-</button>
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+<div class="">
+
+
+ <PosT @postCreated="onCreatePost" class="md:mx-auto"></PosT>
+ <PostDetails v-if="showPost"></PostDetails>  
+
+ 
+ 
+
+</div>
+ 
 </template>
+
 
 <style>
 #app {
