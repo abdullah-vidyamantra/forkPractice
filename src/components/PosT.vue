@@ -60,6 +60,7 @@
       duration-150
       ease-in-out">Submit</button>
   </form>
+  <button @click="store.randomizeCounter" >Count: {{store.counter}}</button>
 </div>
   </div>
 </template>
@@ -67,21 +68,34 @@
 <script setup>
 import { ref } from "vue"
 import axios from "axios"
-  
-  const title = ref("");
-  const description = ref("");
- 
+ import { defineEmits } from 'vue'  
+ import {useStore} from '../store/mainStore.js'
+const store = useStore();
+  let title = ref("");
+  let description = ref("");
+  const emit = defineEmits()
   const register = () => {
   
        axios.post(
-         `https://vue-learn-auth-default-rtdb.firebaseio.com/posts.json`,
+         `posts.json`,
         {title: title.value, description: description.value},
        ).then(response => { 
         console.log(response) 
-        emit('postCreated')   
+        emit('postCreated') 
+        title.value = ''
+        description.value = ''  
          })
+
+
+    
         
   };
+
+    store.$subscribe((mutation, state) => {
+   console.log(mutation)
+   console.log(state)
+
+})
   
 </script>
 

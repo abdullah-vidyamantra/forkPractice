@@ -6,6 +6,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import PosT from './components/PosT.vue'
 import PostDetails from './components/PostDetails.vue'
 import { ref } from 'vue'
+import vHtml from './components/vHtml.vue'
 
 let showPost = ref(true);
 const onCreatePost =() =>{
@@ -21,8 +22,9 @@ setTimeout(() => {
 <div class="">
 
 
- <PosT @postCreated="onCreatePost" class="md:mx-auto"></PosT>
- <PostDetails v-if="showPost"></PostDetails>  
+ <!-- <PosT @postCreated="onCreatePost" class="md:mx-auto"></PosT>
+ <PostDetails v-if="showPost"></PostDetails> -->
+ <vHtml></vHtml>
 
  
  

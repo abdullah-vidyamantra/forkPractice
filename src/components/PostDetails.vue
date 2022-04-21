@@ -29,11 +29,11 @@ const formatPostDetails = (posts) =>{
 for(let key in posts){
     postDetails.value.push({...posts[key], id: key})    
 }
-console.log(postDetails.value)
+//console.log(postDetails.value)
 }
 
 const getPostDetails = () =>{
-   axios.get(`https://vue-learn-auth-default-rtdb.firebaseio.com/posts.json`)
+   axios.get(`posts.json`)
    .then(response=>{
         formatPostDetails(response.data)
    }
