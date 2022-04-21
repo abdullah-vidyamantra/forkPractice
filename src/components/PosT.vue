@@ -24,7 +24,7 @@
  
     </div>
     <div class="form-group mb-6">
-      <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">Description</label>
+      <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">Details</label>
       <input v-model="description" type="texarea" class="form-control block
         w-full
         px-3
@@ -92,7 +92,7 @@ const store = useStore();
   };
 
     store.$subscribe((mutation, state) => {
-   console.log(mutation)
+   console.log(mutqaation)
    console.log(state)
 
 })
