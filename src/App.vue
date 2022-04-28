@@ -25,7 +25,7 @@ setTimeout(() => {
  <!-- <PosT @postCreated="onCreatePost" class="md:mx-auto"></PosT>
  <PostDetails v-if="showPost"></PostDetails> -->
  <vHtml></vHtml>
- <h1>hello1</h1>
+ <h1>hello1 World!!</h1>
 
  
  
