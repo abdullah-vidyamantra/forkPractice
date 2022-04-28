@@ -18,6 +18,7 @@ const count = ref(0)
     <p class="text-slate-500">You have a new message!</p>
   </div>
 </div>
+<h6>hello</h6>
   
 </template>
 
